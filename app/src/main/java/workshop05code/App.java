@@ -56,14 +56,16 @@ public class App {
             String line;
             int i = 1;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+                // System.out.println(line);
+                logger.log(Level.FINE, line);
                 wordleDatabaseConnection.addValidWord(i, line);
                 i++;
             }
 
         } catch (IOException e) {
             System.out.println("Not able to load . Sorry!");
-            System.out.println(e.getMessage());
+            // System.out.println(e.getMessage());
+            logger.log(Level.WARNING, e.getMessage());
             return;
         }
 
